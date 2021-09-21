@@ -1,6 +1,7 @@
 import React from 'react'
-import { Image } from './Image'
-import { Quote } from './Quote'
+
+import { Weather } from './Weather';
+import { MidPage } from './MidPage';
 
 export const Homepage = () => {
     return (
@@ -9,7 +10,8 @@ export const Homepage = () => {
                
 
             </Image> */}
-            <Quote/>
+            <Weather/>
+            <MidPage/>
         </div>
     )
 }

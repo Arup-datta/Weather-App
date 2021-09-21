@@ -1,5 +1,89 @@
-.image {
+/* .image {
     display: flex;
     height: 100%;
     width: 100%;
+} */
+
+body {
+    font-family: sans-serif, 'montseratt';
+}
+
+.app {
+    background-image: url('../images/zionnp.jpg');
+    transition: 0.4 ease-out;
+    background-size: cover;
+    background-position: center top;
+    min-width: 60vh;
+    min-height: 100vh;
+    
+}
+
+.weather {
+    color: #FFF;
+    text-align: right;
+    padding: 10px;
+}
+
+.temp {
+    display: inline-block;
+    position: relative;
+    margin: 15px auto;
+    border-radius: 15px;
+    /* text-shadow: 3px 3px rgba(50, 50, 70, 0.5); */
+    padding: 15px 20px;
+    font-size: 25px;
+}
+
+.loc {
+    
+    margin: 15px auto;
+    font-size: 25px;
+    padding: 0px 25px;
+}
+
+.time {
+    font-size: 30px;
+    color: white;
+    /* display: inline-block; */
+    
+    min-height: 7vh;
+    padding: 5px;
+    border: 1px solid rgb(0, 0, 0);    
+    background-color: rgba(221, 221, 233, 0.5); 
+    font-family: sans-serif;
+    font-style: italic;
+    text-align: center;
+    position: right;
+    background-position: center;
+}
+
+.quote-block {
+    padding: 20px;
+}
+.quote {
+    font-style: oblique;
+    font-size: 25px;
+    color: lemonchiffon;
+    background-position: center;
+    text-align: center;
+}
+
+.author {
+    text-align: center;
+    color:lemonchiffon;
+}
+
+form {
+    text-align: center;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    
+}
+
+.form-data {
+    text-align: center;
+    color: lemonchiffon;
+    font-size: 20px;
 }

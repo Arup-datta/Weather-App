@@ -1,11 +1,13 @@
 import './App.css';
 import { Homepage } from './components/Homepage';
-
+import "./styles/imgstyle.css";
 
 function App() {
   return (
-    <div className="App">
-       <Homepage/>
+    <div className="app">
+      <main>
+        <Homepage/>
+      </main>
     </div>
   );
 }
