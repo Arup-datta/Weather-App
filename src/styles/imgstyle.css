@@ -87,3 +87,17 @@ form {
     color: lemonchiffon;
     font-size: 20px;
 }
+
+/* .modal {
+    height: 30%;
+    width: 30%;
+} */
+
+.modal {
+    text-align: center;
+    width: 600px;
+    border: 5px solid rgb(0, 0, 0);
+    padding: 5px;
+    margin: 50px;
+    background-position: center bottom;
+}

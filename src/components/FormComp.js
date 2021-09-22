@@ -5,7 +5,7 @@ import { Todo } from './Todo';
 
 export const FormComp = () => {
     const[data, setData] = useState('');
-    const [finalData, setFinalData] = useState([]);
+    let [finalData, setFinalData] = useState([]);
     const update = (e) => {
        /// e.preventDefault();
         setData(e.target.value)
@@ -19,6 +19,39 @@ export const FormComp = () => {
         }
     }
 
+    const modifyFinalData = (value) => {
+        console.log(value);
+        // finalData = finalData.filter(text => text !== value);
+        console.log("before update: ");
+        console.log(finalData);
+        let ara = finalData.filter(myFunction);
+        setFinalData(ara);
+        function myFunction(val) {
+            return val != value;
+        }
+
+       // console.log("final data updated: ")
+        //console.log(finalData);
+    }
+
+    const modifyUpdateValue = (curr, prev) => {
+        console.log("Printing states: ");
+        console.log(curr);
+        console.log(prev);
+        setFinalData(finalData.map(filterFunc));
+        function filterFunc(val) {
+            if(val == prev) {
+                /// equal to old value, update and set it as new value
+                return curr;
+            }
+            else {
+                return val;
+            }
+        }
+
+        console.log(finalData);
+    }
+
     return (
         <div>
             <form>
@@ -30,7 +63,7 @@ export const FormComp = () => {
             {
                 finalData.map(data => (
                     // <div className = "form-data"> {data} </div>
-                    <Todo data = {data}/>
+                    <Todo data = {data} modifyFinalData = {modifyFinalData}  modifyUpdateValue = {modifyUpdateValue}/>
                 ))
             }
 
