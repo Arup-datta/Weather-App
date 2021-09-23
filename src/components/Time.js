@@ -10,7 +10,7 @@ export const Time = () => {
         let hour = d.getHours();
         const minute = d.getMinutes();
         const suffix = (hour < 12)? "AM" : "PM";
-        if(suffix == "PM") {
+        if(suffix == "PM" && hour > 12) {
             hour -= 12;
         }
         return "" + hour + ":" + minute + " " + suffix;
