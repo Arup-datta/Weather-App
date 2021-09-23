@@ -4,6 +4,7 @@ import zion from "../images/zionnp.jpg";
 import grand from "../images/grandcanyon.jpeg";
 
 export const images = () => {
+    // Need to modify this function when I have to set background manually
     const ara = []
     ara.push(zion);
     ara.push(grand);

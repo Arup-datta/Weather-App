@@ -23,7 +23,10 @@ export const Quote = () => {
 //    // console.log(state);
 
     useEffect(() => {
-       fetchApi();
+        const interval = setInterval(() => {
+            fetchApi();
+        });
+        return () => clearInterval(interval);
     }, []);
 
     const fetchApi = () => {

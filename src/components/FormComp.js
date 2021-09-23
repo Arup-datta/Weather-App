@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { Todo } from './Todo';
-
+import {Form} from 'react-bootstrap';
 
 export const FormComp = () => {
     const[data, setData] = useState('');
@@ -54,11 +54,11 @@ export const FormComp = () => {
 
     return (
         <div>
-            <form>
+            <Form>
             
                 <input type="text" name="data" placeholder="Add todos" value = {data} onChange = {update} onKeyPress={handleKeyPress}/>
                 
-            </form>
+            </Form>
 
             {
                 finalData.map(data => (
