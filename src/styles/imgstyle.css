@@ -88,6 +88,12 @@ form {
     font-size: 20px;
 }
 
+.focus {
+    text-align: center;
+    color: lemonchiffon;
+    font-size: 20px;
+    min-width: 30px;
+}
 /* .modal {
     height: 30%;
     width: 30%;

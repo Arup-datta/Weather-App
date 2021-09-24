@@ -54,7 +54,7 @@ export const FormComp = () => {
 
     return (
         <div>
-            <Form>
+            <Form style = {{overflowY:'scroll'}}>
             
                 <input type="text" name="data" placeholder="Add todos" value = {data} onChange = {update} onKeyPress={handleKeyPress}/>
                 
