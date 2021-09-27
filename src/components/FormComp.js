@@ -3,15 +3,20 @@ import { useState, useEffect } from 'react';
 import { Todo } from './Todo';
 import {Form} from 'react-bootstrap';
 
-export const FormComp = () => {
-    const[data, setData] = useState('');
-    let [finalData, setFinalData] = useState([]);
+export const FormComp = ({data, setData, finalData, setFinalData}) => {
+    // const[data, setData] = useState('');
+    // let [finalData, setFinalData] = useState([]);
+    useEffect(() => {
+        document.getElementById("todoForm").value = '';
+    });
+    
     const update = (e) => {
        /// e.preventDefault();
         setData(e.target.value)
     }
 
     const handleKeyPress = (event) => {
+        /// i need to do something here
         ///event.preventDefault();
         if(event.key === 'Enter'){
             setFinalData([...finalData, data]);
@@ -54,18 +59,21 @@ export const FormComp = () => {
 
     return (
         <div>
-            <Form style = {{overflowY:'scroll'}}>
+            <Form className = "form-control-lg">
             
-                <input type="text" name="data" placeholder="Add todos" value = {data} onChange = {update} onKeyPress={handleKeyPress}/>
+                <input type="text" name="data" placeholder="Add todos" id = "todoForm" value = {data} onChange = {update} onKeyPress={handleKeyPress}/>
                 
             </Form>
 
-            {
-                finalData.map(data => (
-                    // <div className = "form-data"> {data} </div>
-                    <Todo data = {data} modifyFinalData = {modifyFinalData}  modifyUpdateValue = {modifyUpdateValue}/>
-                ))
-            }
+            <div className = "todoComponents">
+
+                {
+                    finalData.map(data => (
+                        // <div className = "form-data"> {data} </div>
+                        <Todo data = {data} modifyFinalData = {modifyFinalData}  modifyUpdateValue = {modifyUpdateValue}/>
+                    ))
+                }
+            </div>
 
             {/* <div className = "form-data">{finalData.map(data => {
 

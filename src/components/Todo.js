@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // import Model from 'react-modal';
 
@@ -9,6 +9,11 @@ export const Todo = ({data, modifyFinalData, modifyUpdateValue}) => {
     const [init, setInit] = useState(data);
     const [state, setState] = useState(data); // set data as initial state
     const [buttonClicked, setButtonClicked] = useState(false);
+
+    useEffect(() => {
+       document.getElementById("todoForm").value = '';
+    });
+    
 
     const upLift = () => {
         modifyFinalData(data);
@@ -33,7 +38,7 @@ export const Todo = ({data, modifyFinalData, modifyUpdateValue}) => {
         setState(e.target.value);
     }
 
-
+    /// A single TODO is here
     return (
         <div className = "form-data">
             <h4 style = {{marginLeft : "5px" }}> {data} </h4>
@@ -43,9 +48,9 @@ export const Todo = ({data, modifyFinalData, modifyUpdateValue}) => {
             {/* {console.log(buttonClicked)} */}
 
             
-            <Modal show = {buttonClicked} onHide = {buttonClickController}>
+            <Modal className = "updateModal" show = {buttonClicked} onHide = {buttonClickController}>
                 <Modal.Header closeButton>
-                    <Modal.Title> Add Todos </Modal.Title>
+                    <Modal.Title> Update Todos </Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
@@ -55,7 +60,7 @@ export const Todo = ({data, modifyFinalData, modifyUpdateValue}) => {
                 </Modal.Body>
                 
                 <Modal.Footer>
-                    <Button style = {{width: "20%", backgroundPosition: "center"}} onClick = {buttonClickController}>
+                    <Button style = {{width: "20%", backgroundPosition: "center", color: "white", backgroundColor: "green"}} onClick = {buttonClickController}>
                         Submit
                     </Button>
                 </Modal.Footer>
