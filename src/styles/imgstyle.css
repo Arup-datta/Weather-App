@@ -8,30 +8,30 @@ body {
     font-family: sans-serif, 'montseratt';
 }
 
-.app {
-    background-image: url('../images/zionnp.jpg');
+/* .app {
+    background-image: url('../images/zionnp.jpg'); 
     transition: 0.4 ease-out;
     background-size: cover;
     background-position: center top;
     min-width: 60vh;
     min-height: 100vh;
     
-}
+} */
 
 .weather {
     color: #FFF;
     text-align: right;
-    padding: 10px;
+    padding: 5px;
 }
 
 .temp {
     display: inline-block;
     position: relative;
-    margin: 15px auto;
+    margin: 5px auto;
     border-radius: 5px;
     /* text-shadow: 3px 3px rgba(50, 50, 70, 0.5); */
     padding: 15px 20px;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .loc {
@@ -62,15 +62,16 @@ body {
 }
 .quote {
     font-style: oblique;
-    font-size: 25px;
-    color: lemonchiffon;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
     background-position: center;
     text-align: center;
 }
 
 .author {
     text-align: center;
-    color:lemonchiffon;
+    color:rgb(255, 255, 255);
+    font-size: 25px;
 }
 
 form {
@@ -86,14 +87,17 @@ form {
     text-align: center;
     color: rgb(14, 13, 13);
     font-size: 20px;
-    background-color: rgb(150, 208, 216);
-    padding-top: 10px;
+    background-color: rgb(37, 219, 240);
+    padding-top: 30px;
+    border-color: rgb(14, 13, 13);
+    border-radius: 20px;
+    border-spacing: 10px;
 }
 
 .focus {
     text-align: center;
-    color: rgb(221, 202, 149);
-    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
     min-width: 30px;
 }
 /* .modal {

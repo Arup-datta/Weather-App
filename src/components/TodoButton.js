@@ -21,7 +21,7 @@ export const TodoButton = () => {
     return (
             <div className = "todo">
                 {/* <FcBookmark onClick = {showTodos}/> */}
-                <Button className="btn btn-primary" onClick = {showTodos}> Todos </Button>
+                <Button className = "btn btn-primary" onClick = {showTodos}> Todos </Button>
 
                 <Modal show = {buttonClicked} onHide = {hideTodos}>
                     <Modal.Header closeButton>
