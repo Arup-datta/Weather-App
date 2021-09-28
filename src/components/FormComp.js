@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Todo } from './Todo';
 import {Form} from 'react-bootstrap';
 
-export const FormComp = ({data, setData, finalData, setFinalData}) => {
+export const FormComp = ({data, setData, finalData, setFinalData, saveDataInLocalStorage}) => {
     // const[data, setData] = useState('');
     // let [finalData, setFinalData] = useState([]);
     useEffect(() => {
@@ -12,7 +12,7 @@ export const FormComp = ({data, setData, finalData, setFinalData}) => {
     
     const update = (e) => {
        /// e.preventDefault();
-        setData(e.target.value)
+        setData(e.target.value);
     }
 
     const handleKeyPress = (event) => {
@@ -20,17 +20,22 @@ export const FormComp = ({data, setData, finalData, setFinalData}) => {
         ///event.preventDefault();
         if(event.key === 'Enter'){
             setFinalData([...finalData, data]);
+            /// change localstorage
+            saveDataInLocalStorage(finalData); /// local storage updated
             event.preventDefault();
         }
     }
 
+    // Delete function
     const modifyFinalData = (value) => {
-        console.log(value);
-        // finalData = finalData.filter(text => text !== value);
-        console.log("before update: ");
-        console.log(finalData);
+        // console.log(value);
+        // // finalData = finalData.filter(text => text !== value);
+        // console.log("before update: ");
+        // console.log(finalData);
         let ara = finalData.filter(myFunction);
         setFinalData(ara);
+        // change local storage
+        saveDataInLocalStorage(ara); 
         function myFunction(val) {
             return val != value;
         }
@@ -40,10 +45,12 @@ export const FormComp = ({data, setData, finalData, setFinalData}) => {
     }
 
     const modifyUpdateValue = (curr, prev) => {
-        console.log("Printing states: ");
-        console.log(curr);
-        console.log(prev);
+        // console.log("Printing states: ");
+        // console.log(curr);
+        // console.log(prev);
         setFinalData(finalData.map(filterFunc));
+        // change local storage
+        saveDataInLocalStorage(finalData);
         function filterFunc(val) {
             if(val == prev) {
                 /// equal to old value, update and set it as new value
@@ -54,7 +61,7 @@ export const FormComp = ({data, setData, finalData, setFinalData}) => {
             }
         }
 
-        console.log(finalData);
+        // console.log(finalData);
     }
 
     return (

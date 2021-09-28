@@ -6,12 +6,26 @@ import {Form, Button} from 'react-bootstrap';
 import { MainFocusData } from './MainFocusData';
 
 export const MainFocus = () => {
+
+    const saveDataInLocalStorage = (val) => {
+        localStorage.setItem('focus', val);
+    }
+
+    const getDataFromLocalStorage = () => {
+        return localStorage.getItem('focus');
+    }
+
     const[data, setData] = useState('');
     let [finalData, setFinalData] = useState('');
+
     const update = (e) => {
         setData(e.target.value);
-        console.log(data);
     }
+
+    useEffect(() => {
+        /// load data from local storage
+        setFinalData(getDataFromLocalStorage('focus'));
+    }, []);
 
 
     const handleKeyPress = (event) => {
@@ -21,18 +35,19 @@ export const MainFocus = () => {
             // document.getElementById("#focusfield").value = "";
             ///clearField();
             
-            setFinalData(data);
+            setFinalData(data); /// Save this data in local storage
+            saveDataInLocalStorage(data); // saved in local storage
             event.preventDefault();
-           /// event.stopPropagation();
-            // 
+           /// event.stopPropagation(); 
         }
     }
 
     const DeleteData = (e) => {
         /// called from child
-        console.log("Called?");
+       
         setFinalData('');
-       // e.preventDefault();
+        saveDataInLocalStorage('');
+        // Update local storage
     }
 
     return (

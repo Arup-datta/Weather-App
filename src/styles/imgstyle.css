@@ -25,20 +25,20 @@ body {
 }
 
 .temp {
-    display: inline-block;
+    display: inline-block; 
     position: relative;
     margin: 5px auto;
-    border-radius: 5px;
+    border-radius: 0px;
     /* text-shadow: 3px 3px rgba(50, 50, 70, 0.5); */
     padding: 15px 20px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .loc {
     
     margin: 5px auto;
-    font-size: 25px;
-    padding: 0px 10px;
+    font-size: 20px;
+    padding: 15px 20px;
 }
 
 .time {

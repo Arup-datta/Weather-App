@@ -51,12 +51,15 @@ export const Weather = () => {
 
     return (
         <div className="weather">
-            {console.log(weather.main.temp)}
+            {/* {console.log(weather.main.temp)}
             <div className="temp"> {Math.round(weather.main.temp)}°C </div>
-            <div>Feels like: {Math.round(weather.main.feels_like)}</div>
-            {/* <div className="temp"> 31°C </div> */}
-            <div className = "loc">{weather.name} </div> 
+            <h3>Feels like: {Math.round(weather.main.feels_like)}</h3>
+            
+            <div className = "loc">{weather.name} </div>  */}
 
+            <div className="temp"> 31°C </div>
+            <div className="loc">Dhaka</div>
+           
         </div>
     )
 }

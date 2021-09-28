@@ -16,6 +16,7 @@ export const MainFocusData = ({data, DeleteData}) => {
             document.getElementById('button').style.visibility='visible';
         }
     });
+    
     return (
         <div>
              <div className = "focus"> {data} </div>

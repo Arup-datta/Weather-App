@@ -4,8 +4,18 @@ import { FcBookmark } from "react-icons/fc";
 import {Button, Form, Modal} from 'react-bootstrap';
 import { useState } from 'react';
 import { FormComp } from './FormComp';
+import { useEffect } from 'react';
 
 export const TodoButton = () => {
+    /// When the site loads, load data from local storage
+    const saveDataInLocalStorage = (val) => {
+        localStorage.setItem('todos', val);
+    }
+
+    const getDataFromLocalStorage = () => {
+        return localStorage.getItem('todos');
+    }
+
     const[data, setData] = useState('');
     let [finalData, setFinalData] = useState([]);
 
@@ -18,6 +28,12 @@ export const TodoButton = () => {
         setButtonClicked(false);
     }
 
+    useEffect(() => {
+        /// check local storage and set finalData according to that
+        // setFinalData(getDataFromLocalStorage());
+        setFinalData(getDataFromLocalStorage().split(','));
+    }, []);
+
     return (
             <div className = "todo">
                 {/* <FcBookmark onClick = {showTodos}/> */}
@@ -28,7 +44,7 @@ export const TodoButton = () => {
                         <Modal.Title> Todos </Modal.Title>
                     </Modal.Header>
 
-                    <FormComp data = {data} setData = {setData} finalData = {finalData} setFinalData = {setFinalData}/>
+                    <FormComp data = {data} setData = {setData} finalData = {finalData} setFinalData = {setFinalData} saveDataInLocalStorage = {saveDataInLocalStorage}/>
                 </Modal>
             </div>
     )
